@@ -4,6 +4,7 @@ package com.mycompany.eighttiles;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.beans.*;
+import javax.swing.SwingUtilities;
 
 public class EightTile extends JButton {
     private int label;  // Variabile di istanza per il numero sulla tessera
@@ -41,8 +42,14 @@ public class EightTile extends JButton {
         catch(PropertyVetoException e){
             Color oldBackground = getBackground();
             setBackground(Color.RED);
-            Thread.sleep(1);
-            setBackground(oldBackground);
+
+            // Utilizza SwingUtilities.invokeLater per eseguire il codice nell'EDT
+            SwingUtilities.invokeLater(() -> {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {  }
+                setBackground(oldBackground);
+            });
         }
     }
 
