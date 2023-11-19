@@ -4,6 +4,7 @@
  */
 package com.mycompany.eighttiles;
 
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,8 +28,32 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile7.addVetoableChangeListener(eightController1);
         eightTile8.addVetoableChangeListener(eightController1);
         eightTile9.addVetoableChangeListener(eightController1);
+        
+        int[] labels = {1,2,3,4,5,6,7,8,9};
+        permuteArray(labels);
+        eightTile1.restart(labels[0]);
+        eightTile2.restart(labels[1]);
+        eightTile3.restart(labels[2]);
+        eightTile4.restart(labels[3]);
+        eightTile5.restart(labels[4]);
+        eightTile6.restart(labels[5]);
+        eightTile7.restart(labels[6]);
+        eightTile8.restart(labels[7]);
+        eightTile9.restart(labels[8]);
+    }
+    
+     public static void permuteArray(int[] array) {
+        Random random = new Random();
+
+        for (int i = array.length - 1; i > 0; i--) {
+            int index = random.nextInt(i + 1);
+            int temp = array[i];
+            array[i] = array[index];
+            array[index] = temp;
+        }
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,21 +65,21 @@ public class EightBoard extends javax.swing.JFrame {
 
         eightController1 = new com.mycompany.eighttiles.EightController();
         jPanel1 = new javax.swing.JPanel();
-        eightTile1 = new com.mycompany.eighttiles.EightTile(1,1);
-        eightTile2 = new com.mycompany.eighttiles.EightTile(1,2);
-        eightTile3 = new com.mycompany.eighttiles.EightTile(1,1);
-        eightTile4 = new com.mycompany.eighttiles.EightTile(1,1);
-        eightTile5 = new com.mycompany.eighttiles.EightTile(1,1);
-        eightTile6 = new com.mycompany.eighttiles.EightTile(1,1);
-        eightTile7 = new com.mycompany.eighttiles.EightTile(1,1);
-        eightTile8 = new com.mycompany.eighttiles.EightTile(1,1);
-        eightTile9 = new com.mycompany.eighttiles.EightTile(1,1);
+        eightTile1 = new com.mycompany.eighttiles.EightTile(1);
+        eightTile2 = new com.mycompany.eighttiles.EightTile(2);
+        eightTile3 = new com.mycompany.eighttiles.EightTile(3);
+        eightTile4 = new com.mycompany.eighttiles.EightTile(4);
+        eightTile5 = new com.mycompany.eighttiles.EightTile(5);
+        eightTile6 = new com.mycompany.eighttiles.EightTile(6);
+        eightTile7 = new com.mycompany.eighttiles.EightTile(7);
+        eightTile8 = new com.mycompany.eighttiles.EightTile(8);
+        eightTile9 = new com.mycompany.eighttiles.EightTile(9);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 3));
 
-        eightTile1.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile1.setText(" ");
         eightTile1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile1ActionPerformed(evt);
@@ -62,7 +87,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile1);
 
-        eightTile2.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile2.setText(" ");
         eightTile2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile2ActionPerformed(evt);
@@ -70,7 +95,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile2);
 
-        eightTile3.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile3.setText(" ");
         eightTile3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile3ActionPerformed(evt);
@@ -78,7 +103,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile3);
 
-        eightTile4.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile4.setText(" ");
         eightTile4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile4ActionPerformed(evt);
@@ -86,7 +111,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile4);
 
-        eightTile5.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile5.setText(" ");
         eightTile5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile5ActionPerformed(evt);
@@ -94,7 +119,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile5);
 
-        eightTile6.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile6.setText(" ");
         eightTile6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile6ActionPerformed(evt);
@@ -102,7 +127,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile6);
 
-        eightTile7.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile7.setText(" ");
         eightTile7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile7ActionPerformed(evt);
@@ -110,7 +135,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile7);
 
-        eightTile8.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile8.setText(" ");
         eightTile8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile8ActionPerformed(evt);
@@ -118,7 +143,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile8);
 
-        eightTile9.setText(String.valueOf(eightTile1.getTileNumber()));
+        eightTile9.setText(" ");
         eightTile9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile9ActionPerformed(evt);

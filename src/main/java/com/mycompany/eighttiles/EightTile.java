@@ -7,22 +7,19 @@ import java.beans.*;
 import javax.swing.SwingUtilities;
 
 public class EightTile extends JButton {
-    private int label;  // Variabile di istanza per il numero sulla tessera
-    private int position;    // Posizione della tessera
+    private int label;  
+    private int position;    
     private VetoableChangeSupport vetos = new VetoableChangeSupport(this);
+    
     public EightTile() {}
-    public EightTile(int label, int position) {
-        super(String.valueOf(label));  // Imposta il testo del pulsante con il numero
-        this.label = label;        // Imposta il numero sulla tessera
-        this.position = position;        // Imposta la posizione della tessera
+    
+    public EightTile(int position) {
+        super(String.valueOf(0)); 
+        this.label = 0;        
+        this.position = position;       
         this.updateBackgroundColor();
     }
 
-    // Aggiungi altri metodi o variabili di istanza se necessario
-
-    public int getTileNumber() {
-        return label;
-    }
 
     public int getPosition() {
         return position;
@@ -69,5 +66,14 @@ public class EightTile extends JButton {
         } else {
             setBackground(Color.YELLOW); // Sfondo giallo altrimenti
         }
+    }
+    
+    public void restart(int label){
+        this.label = label;
+        if(label == 9)
+            setText(String.valueOf(" "));
+        else
+            setText(String.valueOf(label));
+        this.updateBackgroundColor();
     }
 }
