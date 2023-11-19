@@ -40,6 +40,9 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile7.restart(labels[6]);
         eightTile8.restart(labels[7]);
         eightTile9.restart(labels[8]);
+        
+        int holePosition = findHole(labels) + 1;
+        eightController1.restart(holePosition);
     }
     
      public static void permuteArray(int[] array) {
@@ -51,6 +54,15 @@ public class EightBoard extends javax.swing.JFrame {
             array[i] = array[index];
             array[index] = temp;
         }
+    }
+     
+    public static int findHole(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 9) {
+                return i; // restituisce l'indice se il numero è trovato
+            }
+        }
+        return -1; // restituisce -1 se il numero non è presente nell'array
     }
 
     

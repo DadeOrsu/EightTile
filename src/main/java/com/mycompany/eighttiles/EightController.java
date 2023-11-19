@@ -14,12 +14,12 @@ public class EightController extends JLabel implements VetoableChangeListener {
 
     public EightController() {
         super("START");
-        holePosition = 0; // Initial hole position
+        holePosition = 0; 
     }
 
-    public void restart() {
+    public void restart(int holePosition) {
         setText("START");
-        holePosition = 0; // Reset hole position
+        this.holePosition = holePosition; // Reset hole position
     }
 
     @Override
@@ -36,6 +36,7 @@ public class EightController extends JLabel implements VetoableChangeListener {
                 throw new PropertyVetoException("Illegal move", evt);
             } else {
                 setText("OK");
+                this.holePosition = tilePosition;
             }
         }
     }
