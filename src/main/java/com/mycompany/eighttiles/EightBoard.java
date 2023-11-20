@@ -28,18 +28,23 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile7.addVetoableChangeListener(eightController1);
         eightTile8.addVetoableChangeListener(eightController1);
         eightTile9.addVetoableChangeListener(eightController1);
+        restart();
+    }
+    
+    public void restart(){
+        /* Things to do when you start/restart a game */
         
         int[] labels = {1,2,3,4,5,6,7,8,9};
         permuteArray(labels);
-        eightTile1.restart(labels[0]);
-        eightTile2.restart(labels[1]);
-        eightTile3.restart(labels[2]);
-        eightTile4.restart(labels[3]);
-        eightTile5.restart(labels[4]);
-        eightTile6.restart(labels[5]);
-        eightTile7.restart(labels[6]);
-        eightTile8.restart(labels[7]);
-        eightTile9.restart(labels[8]);
+        eightTile1.restart(labels);
+        eightTile2.restart(labels);
+        eightTile3.restart(labels);
+        eightTile4.restart(labels);
+        eightTile5.restart(labels);
+        eightTile6.restart(labels);
+        eightTile7.restart(labels);
+        eightTile8.restart(labels);
+        eightTile9.restart(labels);
         
         int holePosition = findHole(labels) + 1;
         eightController1.restart(holePosition);
@@ -76,7 +81,6 @@ public class EightBoard extends javax.swing.JFrame {
     private void initComponents() {
 
         eightController1 = new com.mycompany.eighttiles.EightController();
-        jPanel1 = new javax.swing.JPanel();
         eightTile1 = new com.mycompany.eighttiles.EightTile(1);
         eightTile2 = new com.mycompany.eighttiles.EightTile(2);
         eightTile3 = new com.mycompany.eighttiles.EightTile(3);
@@ -89,15 +93,12 @@ public class EightBoard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new java.awt.GridLayout(3, 3));
-
         eightTile1.setText(" ");
         eightTile1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile1ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile1);
 
         eightTile2.setText(" ");
         eightTile2.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +106,6 @@ public class EightBoard extends javax.swing.JFrame {
                 eightTile2ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile2);
 
         eightTile3.setText(" ");
         eightTile3.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +113,6 @@ public class EightBoard extends javax.swing.JFrame {
                 eightTile3ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile3);
 
         eightTile4.setText(" ");
         eightTile4.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +120,6 @@ public class EightBoard extends javax.swing.JFrame {
                 eightTile4ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile4);
 
         eightTile5.setText(" ");
         eightTile5.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +127,6 @@ public class EightBoard extends javax.swing.JFrame {
                 eightTile5ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile5);
 
         eightTile6.setText(" ");
         eightTile6.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +134,6 @@ public class EightBoard extends javax.swing.JFrame {
                 eightTile6ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile6);
 
         eightTile7.setText(" ");
         eightTile7.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +141,6 @@ public class EightBoard extends javax.swing.JFrame {
                 eightTile7ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile7);
 
         eightTile8.setText(" ");
         eightTile8.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +148,6 @@ public class EightBoard extends javax.swing.JFrame {
                 eightTile8ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile8);
 
         eightTile9.setText(" ");
         eightTile9.addActionListener(new java.awt.event.ActionListener() {
@@ -161,30 +155,57 @@ public class EightBoard extends javax.swing.JFrame {
                 eightTile9ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile9);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(eightTile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(eightTile2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(eightTile3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(eightTile4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(eightTile5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(eightTile6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(eightTile7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(eightTile8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(eightTile9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                    .addComponent(eightTile1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eightTile2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eightTile3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(eightTile4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eightTile5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eightTile6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(eightTile7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eightTile8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(eightTile9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
@@ -278,6 +299,5 @@ public class EightBoard extends javax.swing.JFrame {
     private com.mycompany.eighttiles.EightTile eightTile7;
     private com.mycompany.eighttiles.EightTile eightTile8;
     private com.mycompany.eighttiles.EightTile eightTile9;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

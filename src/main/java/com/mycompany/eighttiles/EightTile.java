@@ -68,8 +68,8 @@ public class EightTile extends JButton {
         }
     }
     
-    public void restart(int label){
-        this.label = label;
+    public void restart(int[] labels){
+        this.label = labels[this.position - 1];
         if(label == 9)
             setText(String.valueOf(" "));
         else
