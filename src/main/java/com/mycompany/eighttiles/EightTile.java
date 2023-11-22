@@ -3,10 +3,14 @@ package com.mycompany.eighttiles;
 
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.beans.*;
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.SwingUtilities;
 
-public class EightTile extends JButton {
+public class EightTile extends JButton implements ActionListener {
     private int label;  
     private int position;    
     private VetoableChangeSupport vetos = new VetoableChangeSupport(this);
@@ -75,5 +79,14 @@ public class EightTile extends JButton {
         else
             setText(String.valueOf(label));
         this.updateBackgroundColor();
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        // retrieve the Array from the the restartButton's properties
+        //TODO: add the control to distinguish between the restart and flip button. 
+        JButton button = (JButton) ae.getSource();
+        int[] retrievedArray = (int[]) button.getClientProperty("labels");
+        this.restart(retrievedArray);
     }
 }

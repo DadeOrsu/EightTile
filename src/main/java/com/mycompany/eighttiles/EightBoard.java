@@ -4,6 +4,8 @@
  */
 package com.mycompany.eighttiles;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +21,7 @@ public class EightBoard extends javax.swing.JFrame {
      */
     public EightBoard() {
         initComponents();
+        // add the Vetoable Change Listener to each tile
         eightTile1.addVetoableChangeListener(eightController1);
         eightTile2.addVetoableChangeListener(eightController1);
         eightTile3.addVetoableChangeListener(eightController1);
@@ -29,6 +32,32 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile8.addVetoableChangeListener(eightController1);
         eightTile9.addVetoableChangeListener(eightController1);
         restart();
+        
+        
+        int[] labels = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        permuteArray(labels);
+        restartButton.setActionCommand("restart");
+        restartButton.putClientProperty("labels", labels);
+        
+        // Add an action listener that permutes yhe labels
+        restartButton.addActionListener((ActionEvent ae) -> {
+            permuteArray(labels);
+            restartButton.setActionCommand("restart");
+            restartButton.putClientProperty("labels", labels);
+        });
+        
+        // Add the tiles to the list of the action listeners
+        restartButton.addActionListener(eightTile1);
+        restartButton.addActionListener(eightTile2);
+        restartButton.addActionListener(eightTile3);
+        restartButton.addActionListener(eightTile4);
+        restartButton.addActionListener(eightTile5);
+        restartButton.addActionListener(eightTile6);
+        restartButton.addActionListener(eightTile7);
+        restartButton.addActionListener(eightTile8);
+        restartButton.addActionListener(eightTile9);
+
+                
     }
     
     public void restart(){
@@ -90,6 +119,7 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile7 = new com.mycompany.eighttiles.EightTile(7);
         eightTile8 = new com.mycompany.eighttiles.EightTile(8);
         eightTile9 = new com.mycompany.eighttiles.EightTile(9);
+        restartButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,6 +186,13 @@ public class EightBoard extends javax.swing.JFrame {
             }
         });
 
+        restartButton.setText("RESTART");
+        restartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restartButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,7 +201,9 @@ public class EightBoard extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(153, 153, 153)
-                        .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(restartButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,6 +221,7 @@ public class EightBoard extends javax.swing.JFrame {
                                 .addComponent(eightTile6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(eightTile7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
                                 .addComponent(eightTile8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
                                 .addComponent(eightTile9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -203,9 +243,11 @@ public class EightBoard extends javax.swing.JFrame {
                     .addComponent(eightTile7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eightTile8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(eightTile9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(restartButton))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         pack();
@@ -255,6 +297,10 @@ public class EightBoard extends javax.swing.JFrame {
         eightTilePressed(eightTile2);
     }//GEN-LAST:event_eightTile2ActionPerformed
 
+    private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
+
+    }//GEN-LAST:event_restartButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,5 +345,6 @@ public class EightBoard extends javax.swing.JFrame {
     private com.mycompany.eighttiles.EightTile eightTile7;
     private com.mycompany.eighttiles.EightTile eightTile8;
     private com.mycompany.eighttiles.EightTile eightTile9;
+    private javax.swing.JButton restartButton;
     // End of variables declaration//GEN-END:variables
 }
