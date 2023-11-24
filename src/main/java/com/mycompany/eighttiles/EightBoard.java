@@ -13,7 +13,7 @@ public class EightBoard extends javax.swing.JFrame {
     /**
      * Creates new form EightBoard
      */
-    private int holePosition;
+
     public EightBoard() {
         initComponents();
         // add the Vetoable Change Listener to each tile
@@ -26,12 +26,28 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile7.addVetoableChangeListener(eightController1);
         eightTile8.addVetoableChangeListener(eightController1);
         eightTile9.addVetoableChangeListener(eightController1);
-        restart();
+        
+        
+        // assign the labels to the tiles
+        
+        int[] labels = {1,2,3,4,5,6,7,8,9};
+        permuteArray(labels);
+        eightTile1.restart(labels);
+        eightTile2.restart(labels);
+        eightTile3.restart(labels);
+        eightTile4.restart(labels);
+        eightTile5.restart(labels);
+        eightTile6.restart(labels);
+        eightTile7.restart(labels);
+        eightTile8.restart(labels);
+        eightTile9.restart(labels);
+        
+        // find the hole position and tell it to the controller
+        int holePosition = findHole(labels) + 1;
+        eightController1.restart(holePosition);
         
         // compute the first permutation
-        int[] labels = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         permuteArray(labels);
-        holePosition = findHole(labels)+1;
         restartButton.setActionCommand("restart");
         restartButton.putClientProperty("labels", labels);
         
@@ -55,26 +71,7 @@ public class EightBoard extends javax.swing.JFrame {
 
                 
     }
-    
-    public void restart(){
-        /* Things to do when you start/restart a game */
         
-        int[] labels = {1,2,3,4,5,6,7,8,9};
-        permuteArray(labels);
-        eightTile1.restart(labels);
-        eightTile2.restart(labels);
-        eightTile3.restart(labels);
-        eightTile4.restart(labels);
-        eightTile5.restart(labels);
-        eightTile6.restart(labels);
-        eightTile7.restart(labels);
-        eightTile8.restart(labels);
-        eightTile9.restart(labels);
-        
-        holePosition = findHole(labels) + 1;
-        eightController1.restart(holePosition);
-    }
-    
      public static void permuteArray(int[] array) {
         Random random = new Random();
 
@@ -106,15 +103,15 @@ public class EightBoard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        eightTile6 = new com.mycompany.eighttiles.EightTile(6);
-        eightTile8 = new com.mycompany.eighttiles.EightTile(8);
+        eightTile1 = new com.mycompany.eighttiles.EightTile(1);
+        eightTile2 = new com.mycompany.eighttiles.EightTile(2);
         eightTile3 = new com.mycompany.eighttiles.EightTile(3);
         eightTile4 = new com.mycompany.eighttiles.EightTile(4);
-        eightTile2 = new com.mycompany.eighttiles.EightTile(2);
-        eightTile1 = new com.mycompany.eighttiles.EightTile(1);
-        eightTile7 = new com.mycompany.eighttiles.EightTile(7);
-        eightTile9 = new com.mycompany.eighttiles.EightTile(9);
         eightTile5 = new com.mycompany.eighttiles.EightTile(5);
+        eightTile6 = new com.mycompany.eighttiles.EightTile(6);
+        eightTile7 = new com.mycompany.eighttiles.EightTile(7);
+        eightTile8 = new com.mycompany.eighttiles.EightTile(8);
+        eightTile9 = new com.mycompany.eighttiles.EightTile(9);
         jPanel2 = new javax.swing.JPanel();
         eightController1 = new com.mycompany.eighttiles.EightController();
         flip = new javax.swing.JButton();
@@ -124,21 +121,21 @@ public class EightBoard extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 3));
 
-        eightTile6.setText(" ");
-        eightTile6.addActionListener(new java.awt.event.ActionListener() {
+        eightTile1.setText(" ");
+        eightTile1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile6ActionPerformed(evt);
+                eightTile1ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile6);
+        jPanel1.add(eightTile1);
 
-        eightTile8.setText(" ");
-        eightTile8.addActionListener(new java.awt.event.ActionListener() {
+        eightTile2.setText(" ");
+        eightTile2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile8ActionPerformed(evt);
+                eightTile2ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile8);
+        jPanel1.add(eightTile2);
 
         eightTile3.setText(" ");
         eightTile3.addActionListener(new java.awt.event.ActionListener() {
@@ -156,21 +153,21 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile4);
 
-        eightTile2.setText(" ");
-        eightTile2.addActionListener(new java.awt.event.ActionListener() {
+        eightTile5.setText(" ");
+        eightTile5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile2ActionPerformed(evt);
+                eightTile5ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile2);
+        jPanel1.add(eightTile5);
 
-        eightTile1.setText(" ");
-        eightTile1.addActionListener(new java.awt.event.ActionListener() {
+        eightTile6.setText(" ");
+        eightTile6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile1ActionPerformed(evt);
+                eightTile6ActionPerformed(evt);
             }
         });
-        jPanel1.add(eightTile1);
+        jPanel1.add(eightTile6);
 
         eightTile7.setText(" ");
         eightTile7.addActionListener(new java.awt.event.ActionListener() {
@@ -180,6 +177,14 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile7);
 
+        eightTile8.setText(" ");
+        eightTile8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile8);
+
         eightTile9.setText(" ");
         eightTile9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,14 +192,6 @@ public class EightBoard extends javax.swing.JFrame {
             }
         });
         jPanel1.add(eightTile9);
-
-        eightTile5.setText(" ");
-        eightTile5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(eightTile5);
 
         jPanel2.setLayout(new java.awt.GridLayout());
         jPanel2.add(eightController1);
