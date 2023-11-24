@@ -17,31 +17,31 @@ public class EightBoard extends javax.swing.JFrame {
 
     public EightBoard() {
         initComponents();
+        EightTile[] tiles = new EightTile[]{
+            eightTile1,
+            eightTile2,
+            eightTile3,
+            eightTile4,
+            eightTile5,
+            eightTile6,
+            eightTile7,
+            eightTile8, 
+            eightTile9
+        };
         // add the Vetoable Change Listener to each tile
-        eightTile1.addVetoableChangeListener(eightController1);
-        eightTile2.addVetoableChangeListener(eightController1);
-        eightTile3.addVetoableChangeListener(eightController1);
-        eightTile4.addVetoableChangeListener(eightController1);
-        eightTile5.addVetoableChangeListener(eightController1);
-        eightTile6.addVetoableChangeListener(eightController1);
-        eightTile7.addVetoableChangeListener(eightController1);
-        eightTile8.addVetoableChangeListener(eightController1);
-        eightTile9.addVetoableChangeListener(eightController1);
+        
+        for (EightTile tile : tiles) {
+            tile.addVetoableChangeListener(eightController1);
+        }
         
         
         // assign the labels to the tiles
         
         int[] labels = {1,2,3,4,5,6,7,8,9};
         permuteArray(labels);
-        eightTile1.restart(labels);
-        eightTile2.restart(labels);
-        eightTile3.restart(labels);
-        eightTile4.restart(labels);
-        eightTile5.restart(labels);
-        eightTile6.restart(labels);
-        eightTile7.restart(labels);
-        eightTile8.restart(labels);
-        eightTile9.restart(labels);
+        for (EightTile tile : tiles) {
+            tile.restart(labels);
+        }
         
         // find the hole position and tell it to the controller
         holePosition = findHole(labels) + 1;
@@ -62,17 +62,9 @@ public class EightBoard extends javax.swing.JFrame {
         });
         
         // Add the tiles to the list of the action listeners
-        restartButton.addActionListener(eightTile1);
-        restartButton.addActionListener(eightTile2);
-        restartButton.addActionListener(eightTile3);
-        restartButton.addActionListener(eightTile4);
-        restartButton.addActionListener(eightTile5);
-        restartButton.addActionListener(eightTile6);
-        restartButton.addActionListener(eightTile7);
-        restartButton.addActionListener(eightTile8);
-        restartButton.addActionListener(eightTile9);
-
-                
+        for (EightTile tile : tiles) {
+            restartButton.addActionListener(tile);
+        }  
     }
         
      public static void permuteArray(int[] array) {
@@ -89,10 +81,10 @@ public class EightBoard extends javax.swing.JFrame {
     public static int findHole(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == 9) {
-                return i; // restituisce l'indice se il numero è trovato
+                return i; 
             }
         }
-        return -1; // restituisce -1 se il numero non è presente nell'array
+        return -1; 
     }
 
     
