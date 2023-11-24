@@ -13,6 +13,7 @@ public class EightBoard extends javax.swing.JFrame {
     /**
      * Creates new form EightBoard
      */
+    private int holePosition;
     public EightBoard() {
         initComponents();
         // add the Vetoable Change Listener to each tile
@@ -27,13 +28,14 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile9.addVetoableChangeListener(eightController1);
         restart();
         
-        
+        // compute the first permutation
         int[] labels = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         permuteArray(labels);
+        holePosition = findHole(labels)+1;
         restartButton.setActionCommand("restart");
         restartButton.putClientProperty("labels", labels);
         
-        // Add an action listener that permutes yhe labels
+        // Add an action listener that permutes the labels
         restartButton.addActionListener((ActionEvent ae) -> {
             permuteArray(labels);
             restartButton.setActionCommand("restart");
@@ -69,7 +71,7 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile8.restart(labels);
         eightTile9.restart(labels);
         
-        int holePosition = findHole(labels) + 1;
+        holePosition = findHole(labels) + 1;
         eightController1.restart(holePosition);
     }
     

@@ -60,11 +60,11 @@ public class EightTile extends JButton implements ActionListener {
     
     public void updateBackgroundColor() {
         if (label == 9) {
-            setBackground(Color.GRAY);  // Sfondo grigio se il numero sulla tessera è 9
+            setBackground(Color.GRAY);  
         } else if (label == position) {
-            setBackground(Color.GREEN); // Sfondo verde se il numero sulla tessera è uguale alla posizione
+            setBackground(Color.GREEN); 
         } else {
-            setBackground(Color.YELLOW); // Sfondo giallo altrimenti
+            setBackground(Color.YELLOW); 
         }
     }
     
@@ -82,7 +82,9 @@ public class EightTile extends JButton implements ActionListener {
         // retrieve the Array from the the restartButton's properties
         //TODO: add the control to distinguish between the restart and flip button. 
         JButton button = (JButton) ae.getSource();
-        int[] retrievedArray = (int[]) button.getClientProperty("labels");
-        this.restart(retrievedArray);
+        if(button.getActionCommand().equals("restart")){
+            int[] retrievedArray = (int[]) button.getClientProperty("labels");
+            this.restart(retrievedArray);
+        }
     }
 }
