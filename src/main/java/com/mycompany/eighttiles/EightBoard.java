@@ -110,81 +110,19 @@ public class EightBoard extends javax.swing.JFrame {
     private void initComponents() {
 
         eightController1 = new com.mycompany.eighttiles.EightController();
-        eightTile1 = new com.mycompany.eighttiles.EightTile(1);
-        eightTile2 = new com.mycompany.eighttiles.EightTile(2);
+        restartButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        eightTile6 = new com.mycompany.eighttiles.EightTile(6);
+        eightTile8 = new com.mycompany.eighttiles.EightTile(8);
         eightTile3 = new com.mycompany.eighttiles.EightTile(3);
         eightTile4 = new com.mycompany.eighttiles.EightTile(4);
-        eightTile5 = new com.mycompany.eighttiles.EightTile(5);
-        eightTile6 = new com.mycompany.eighttiles.EightTile(6);
+        eightTile2 = new com.mycompany.eighttiles.EightTile(2);
+        eightTile1 = new com.mycompany.eighttiles.EightTile(1);
         eightTile7 = new com.mycompany.eighttiles.EightTile(7);
-        eightTile8 = new com.mycompany.eighttiles.EightTile(8);
         eightTile9 = new com.mycompany.eighttiles.EightTile(9);
-        restartButton = new javax.swing.JButton();
+        eightTile5 = new com.mycompany.eighttiles.EightTile(5);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        eightTile1.setText(" ");
-        eightTile1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile1ActionPerformed(evt);
-            }
-        });
-
-        eightTile2.setText(" ");
-        eightTile2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile2ActionPerformed(evt);
-            }
-        });
-
-        eightTile3.setText(" ");
-        eightTile3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile3ActionPerformed(evt);
-            }
-        });
-
-        eightTile4.setText(" ");
-        eightTile4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile4ActionPerformed(evt);
-            }
-        });
-
-        eightTile5.setText(" ");
-        eightTile5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile5ActionPerformed(evt);
-            }
-        });
-
-        eightTile6.setText(" ");
-        eightTile6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile6ActionPerformed(evt);
-            }
-        });
-
-        eightTile7.setText(" ");
-        eightTile7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile7ActionPerformed(evt);
-            }
-        });
-
-        eightTile8.setText(" ");
-        eightTile8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile8ActionPerformed(evt);
-            }
-        });
-
-        eightTile9.setText(" ");
-        eightTile9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile9ActionPerformed(evt);
-            }
-        });
 
         restartButton.setText("RESTART");
         restartButton.addActionListener(new java.awt.event.ActionListener() {
@@ -192,6 +130,80 @@ public class EightBoard extends javax.swing.JFrame {
                 restartButtonActionPerformed(evt);
             }
         });
+
+        jPanel1.setLayout(new java.awt.GridLayout(3, 3));
+
+        eightTile6.setText(" ");
+        eightTile6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile6);
+
+        eightTile8.setText(" ");
+        eightTile8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile8);
+
+        eightTile3.setText(" ");
+        eightTile3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile3);
+
+        eightTile4.setText(" ");
+        eightTile4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile4);
+
+        eightTile2.setText(" ");
+        eightTile2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile2);
+
+        eightTile1.setText(" ");
+        eightTile1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile1);
+
+        eightTile7.setText(" ");
+        eightTile7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile7);
+
+        eightTile9.setText(" ");
+        eightTile9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile9ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile9);
+
+        eightTile5.setText(" ");
+        eightTile5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eightTile5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eightTile5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,48 +218,19 @@ public class EightBoard extends javax.swing.JFrame {
                         .addComponent(restartButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(105, 105, 105)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(eightTile1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(eightTile2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(eightTile3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(eightTile4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(eightTile5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(eightTile6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(eightTile7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(eightTile8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(eightTile9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(152, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(75, 75, 75)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eightTile1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eightTile2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eightTile3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eightTile4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eightTile5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eightTile6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(eightTile7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eightTile8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eightTile9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(restartButton))
-                .addContainerGap(96, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
@@ -345,6 +328,7 @@ public class EightBoard extends javax.swing.JFrame {
     private com.mycompany.eighttiles.EightTile eightTile7;
     private com.mycompany.eighttiles.EightTile eightTile8;
     private com.mycompany.eighttiles.EightTile eightTile9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton restartButton;
     // End of variables declaration//GEN-END:variables
 }
