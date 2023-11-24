@@ -1,11 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.eighttiles;
-
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -109,8 +103,6 @@ public class EightBoard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        eightController1 = new com.mycompany.eighttiles.EightController();
-        restartButton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         eightTile6 = new com.mycompany.eighttiles.EightTile(6);
         eightTile8 = new com.mycompany.eighttiles.EightTile(8);
@@ -121,15 +113,12 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile7 = new com.mycompany.eighttiles.EightTile(7);
         eightTile9 = new com.mycompany.eighttiles.EightTile(9);
         eightTile5 = new com.mycompany.eighttiles.EightTile(5);
+        jPanel2 = new javax.swing.JPanel();
+        eightController1 = new com.mycompany.eighttiles.EightController();
+        flip = new javax.swing.JButton();
+        restartButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        restartButton.setText("RESTART");
-        restartButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                restartButtonActionPerformed(evt);
-            }
-        });
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 3));
 
@@ -205,32 +194,44 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile5);
 
+        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.add(eightController1);
+
+        flip.setText("FLIP");
+        flip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                flipActionPerformed(evt);
+            }
+        });
+        jPanel2.add(flip);
+
+        restartButton.setText("RESTART");
+        restartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restartButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(restartButton);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(restartButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addGap(105, 105, 105)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eightController1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(restartButton))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
@@ -284,6 +285,10 @@ public class EightBoard extends javax.swing.JFrame {
 
     }//GEN-LAST:event_restartButtonActionPerformed
 
+    private void flipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flipActionPerformed
+        
+    }//GEN-LAST:event_flipActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -328,7 +333,9 @@ public class EightBoard extends javax.swing.JFrame {
     private com.mycompany.eighttiles.EightTile eightTile7;
     private com.mycompany.eighttiles.EightTile eightTile8;
     private com.mycompany.eighttiles.EightTile eightTile9;
+    private javax.swing.JButton flip;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton restartButton;
     // End of variables declaration//GEN-END:variables
 }

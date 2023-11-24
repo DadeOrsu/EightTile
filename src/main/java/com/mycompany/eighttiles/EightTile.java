@@ -1,13 +1,9 @@
 package com.mycompany.eighttiles;
-
-
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.*;
-import java.util.Arrays;
-import java.util.List;
 import javax.swing.SwingUtilities;
 
 public class EightTile extends JButton implements ActionListener {
