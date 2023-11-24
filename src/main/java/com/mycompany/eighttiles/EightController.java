@@ -32,7 +32,6 @@ public class EightController extends JLabel implements VetoableChangeListener {
             } else {
                 setText("OK");
                 this.holePosition = tilePosition;
-                System.out.print(this.holePosition);
             }
         }
     }

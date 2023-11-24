@@ -13,6 +13,7 @@ public class EightBoard extends javax.swing.JFrame {
     /**
      * Creates new form EightBoard
      */
+    private int holePosition;
 
     public EightBoard() {
         initComponents();
@@ -43,7 +44,7 @@ public class EightBoard extends javax.swing.JFrame {
         eightTile9.restart(labels);
         
         // find the hole position and tell it to the controller
-        int holePosition = findHole(labels) + 1;
+        holePosition = findHole(labels) + 1;
         eightController1.restart(holePosition);
         
         // compute the first permutation
@@ -54,6 +55,8 @@ public class EightBoard extends javax.swing.JFrame {
         // Add an action listener that permutes the labels
         restartButton.addActionListener((ActionEvent ae) -> {
             permuteArray(labels);
+            holePosition = findHole(labels)+1;
+            eightController1.restart(holePosition);
             restartButton.setActionCommand("restart");
             restartButton.putClientProperty("labels", labels);
         });
