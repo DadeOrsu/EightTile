@@ -25,6 +25,10 @@ public class EightTile extends JButton implements ActionListener {
         return position;
     }
 
+    @Override
+    public String getLabel(){
+        return Integer.toString(label);
+    }
     public void setLabel(int label) throws InterruptedException {
         int oldLabel = this.label;
         try{

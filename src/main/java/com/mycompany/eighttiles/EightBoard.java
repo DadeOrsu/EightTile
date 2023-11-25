@@ -1,5 +1,6 @@
 package com.mycompany.eighttiles;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,7 +15,7 @@ public class EightBoard extends javax.swing.JFrame {
      * Creates new form EightBoard
      */
 
-
+    
     public EightBoard() {
         initComponents();
         EightTile[] tiles = new EightTile[]{
@@ -52,8 +53,7 @@ public class EightBoard extends javax.swing.JFrame {
         
         // Add an action listener that permutes the labels
         restartButton.addActionListener((ActionEvent ae) -> {
-            permuteArray(labels);            
-            restartButton.putClientProperty("labels", labels);
+            permuteArray(labels);
         });
         
         // Add the tiles to the list of the action listeners
