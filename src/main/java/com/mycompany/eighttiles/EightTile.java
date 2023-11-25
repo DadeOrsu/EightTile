@@ -51,6 +51,7 @@ public class EightTile extends JButton implements ActionListener {
                 } catch (InterruptedException ex) {  }
                 setBackground(oldBackground);
             });
+            throw new InterruptedException();
         }
     }
 

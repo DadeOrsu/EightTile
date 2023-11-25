@@ -1,6 +1,5 @@
 package com.mycompany.eighttiles;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +14,8 @@ public class EightBoard extends javax.swing.JFrame {
      * Creates new form EightBoard
      */
 
-    
+    private EightTile hole;
+    private EightTile nextHole;
     public EightBoard() {
         initComponents();
         EightTile[] tiles = new EightTile[]{
@@ -46,14 +46,32 @@ public class EightBoard extends javax.swing.JFrame {
         // find the hole position and tell it to the controller
         eightController1.restart(labels);
         
+        //find the hole
+        for(int i = 0;i<labels.length;i++){
+            if(labels[i] == 9)
+                hole = tiles[i];
+        }
+ 
         // compute the first permutation
         permuteArray(labels);
         restartButton.setActionCommand("restart");
         restartButton.putClientProperty("labels", labels);
         
+        /* TODO: aggiungere next hole position */
+        for(int i = 0;i<labels.length;i++){
+            if(labels[i] == 9)
+                nextHole = tiles[i];
+        }
+         
+        
         // Add an action listener that permutes the labels
         restartButton.addActionListener((ActionEvent ae) -> {
             permuteArray(labels);
+            hole = nextHole;
+            for(int i = 0;i<labels.length;i++){
+                if(labels[i] == 9)
+                    nextHole = tiles[i];
+            }
         });
         
         // Add the tiles to the list of the action listeners
@@ -223,10 +241,14 @@ public class EightBoard extends javax.swing.JFrame {
     
     private void eightTilePressed(EightTile eightTile){
          try {
+            /*TODO: passare hole al metodo set label*/
+            String oldLabel = eightTile.getLabel();
             eightTile.setLabel(9);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(EightBoard.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            int[] newLabels = {0,0,0,0,0,0,0,0,0};
+            newLabels[hole.getPosition()-1]=Integer.parseInt(oldLabel);
+            hole.restart(newLabels);
+            hole = eightTile;
+        } catch (InterruptedException ex) {}
     }
     
     private void eightTile8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile8ActionPerformed
