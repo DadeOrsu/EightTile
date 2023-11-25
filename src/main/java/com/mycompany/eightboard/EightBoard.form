@@ -53,7 +53,7 @@
         <Property name="rows" type="int" value="3"/>
       </Layout>
       <SubComponents>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile1">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile1">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -63,10 +63,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile1ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(1)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(1)"/>
           </AuxValues>
         </Component>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile2">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile2">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -76,10 +76,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile2ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(2)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(2)"/>
           </AuxValues>
         </Component>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile3">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile3">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -89,10 +89,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile3ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(3)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(3)"/>
           </AuxValues>
         </Component>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile4">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile4">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -102,10 +102,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile4ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(4)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(4)"/>
           </AuxValues>
         </Component>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile5">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile5">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -115,10 +115,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile5ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(5)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(5)"/>
           </AuxValues>
         </Component>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile6">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile6">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -128,10 +128,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile6ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(6)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(6)"/>
           </AuxValues>
         </Component>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile7">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile7">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -141,10 +141,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile7ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(7)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(7)"/>
           </AuxValues>
         </Component>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile8">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile8">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -154,10 +154,10 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile8ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(8)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(8)"/>
           </AuxValues>
         </Component>
-        <Component class="com.mycompany.eighttiles.EightTile" name="eightTile9">
+        <Component class="com.mycompany.eightboard.EightTile" name="eightTile9">
           <Properties>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot; &quot;" type="code"/>
@@ -167,7 +167,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile9ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eighttiles.EightTile(9)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(9)"/>
           </AuxValues>
         </Component>
       </SubComponents>
@@ -179,7 +179,7 @@
         <Property name="rows" type="int" value="1"/>
       </Layout>
       <SubComponents>
-        <Component class="com.mycompany.eighttiles.EightController" name="eightController1">
+        <Component class="com.mycompany.eightboard.EightController" name="eightController1">
         </Component>
         <Component class="javax.swing.JButton" name="flip">
           <Properties>

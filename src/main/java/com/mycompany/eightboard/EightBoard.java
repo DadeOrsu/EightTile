@@ -1,4 +1,4 @@
-package com.mycompany.eighttiles;
+package com.mycompany.eightboard;
 import java.awt.event.ActionEvent;
 import java.util.Random;
 
@@ -109,17 +109,17 @@ public class EightBoard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        eightTile1 = new com.mycompany.eighttiles.EightTile(1);
-        eightTile2 = new com.mycompany.eighttiles.EightTile(2);
-        eightTile3 = new com.mycompany.eighttiles.EightTile(3);
-        eightTile4 = new com.mycompany.eighttiles.EightTile(4);
-        eightTile5 = new com.mycompany.eighttiles.EightTile(5);
-        eightTile6 = new com.mycompany.eighttiles.EightTile(6);
-        eightTile7 = new com.mycompany.eighttiles.EightTile(7);
-        eightTile8 = new com.mycompany.eighttiles.EightTile(8);
-        eightTile9 = new com.mycompany.eighttiles.EightTile(9);
+        eightTile1 = new com.mycompany.eightboard.EightTile(1);
+        eightTile2 = new com.mycompany.eightboard.EightTile(2);
+        eightTile3 = new com.mycompany.eightboard.EightTile(3);
+        eightTile4 = new com.mycompany.eightboard.EightTile(4);
+        eightTile5 = new com.mycompany.eightboard.EightTile(5);
+        eightTile6 = new com.mycompany.eightboard.EightTile(6);
+        eightTile7 = new com.mycompany.eightboard.EightTile(7);
+        eightTile8 = new com.mycompany.eightboard.EightTile(8);
+        eightTile9 = new com.mycompany.eightboard.EightTile(9);
         jPanel2 = new javax.swing.JPanel();
-        eightController1 = new com.mycompany.eighttiles.EightController();
+        eightController1 = new com.mycompany.eightboard.EightController();
         flip = new javax.swing.JButton();
         restartButton = new javax.swing.JButton();
 
@@ -331,16 +331,16 @@ public class EightBoard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.mycompany.eighttiles.EightController eightController1;
-    private com.mycompany.eighttiles.EightTile eightTile1;
-    private com.mycompany.eighttiles.EightTile eightTile2;
-    private com.mycompany.eighttiles.EightTile eightTile3;
-    private com.mycompany.eighttiles.EightTile eightTile4;
-    private com.mycompany.eighttiles.EightTile eightTile5;
-    private com.mycompany.eighttiles.EightTile eightTile6;
-    private com.mycompany.eighttiles.EightTile eightTile7;
-    private com.mycompany.eighttiles.EightTile eightTile8;
-    private com.mycompany.eighttiles.EightTile eightTile9;
+    private com.mycompany.eightboard.EightController eightController1;
+    private com.mycompany.eightboard.EightTile eightTile1;
+    private com.mycompany.eightboard.EightTile eightTile2;
+    private com.mycompany.eightboard.EightTile eightTile3;
+    private com.mycompany.eightboard.EightTile eightTile4;
+    private com.mycompany.eightboard.EightTile eightTile5;
+    private com.mycompany.eightboard.EightTile eightTile6;
+    private com.mycompany.eightboard.EightTile eightTile7;
+    private com.mycompany.eightboard.EightTile eightTile8;
+    private com.mycompany.eightboard.EightTile eightTile9;
     private javax.swing.JButton flip;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

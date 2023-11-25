@@ -1,4 +1,4 @@
-package com.mycompany.eighttiles;
+package com.mycompany.eightboard;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
