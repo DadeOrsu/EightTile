@@ -80,7 +80,6 @@ public class EightTile extends JButton implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent ae) {
         // retrieve the Array from the the restartButton's properties
-        //TODO: add the control to distinguish between the restart and flip button. 
         JButton button = (JButton) ae.getSource();
         if(button.getActionCommand().equals("restart")){
             int[] retrievedArray = (int[]) button.getClientProperty("labels");

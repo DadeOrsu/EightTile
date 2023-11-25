@@ -13,7 +13,7 @@ public class EightBoard extends javax.swing.JFrame {
     /**
      * Creates new form EightBoard
      */
-    private int holePosition;
+
 
     public EightBoard() {
         initComponents();
@@ -42,10 +42,8 @@ public class EightBoard extends javax.swing.JFrame {
         for (EightTile tile : tiles) {
             tile.restart(labels);
         }
-        
         // find the hole position and tell it to the controller
-        holePosition = findHole(labels) + 1;
-        eightController1.restart(holePosition);
+        eightController1.restart(labels);
         
         // compute the first permutation
         permuteArray(labels);
@@ -54,17 +52,17 @@ public class EightBoard extends javax.swing.JFrame {
         
         // Add an action listener that permutes the labels
         restartButton.addActionListener((ActionEvent ae) -> {
-            permuteArray(labels);
-            holePosition = findHole(labels)+1;
-            eightController1.restart(holePosition);
-            restartButton.setActionCommand("restart");
+            permuteArray(labels);            
             restartButton.putClientProperty("labels", labels);
         });
         
         // Add the tiles to the list of the action listeners
         for (EightTile tile : tiles) {
             restartButton.addActionListener(tile);
-        }  
+        } 
+        
+        // Add the Eight Controller to the list of the action listeners
+        restartButton.addActionListener(eightController1);
     }
         
      public static void permuteArray(int[] array) {
@@ -78,14 +76,6 @@ public class EightBoard extends javax.swing.JFrame {
         }
     }
      
-    public static int findHole(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == 9) {
-                return i; 
-            }
-        }
-        return -1; 
-    }
 
     
     /**

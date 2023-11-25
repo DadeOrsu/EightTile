@@ -1,10 +1,13 @@
 package com.mycompany.eighttiles;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyVetoException;
 import java.beans.VetoableChangeListener;
+import javax.swing.JButton;
 
-public class EightController extends JLabel implements VetoableChangeListener {
+public class EightController extends JLabel implements VetoableChangeListener, ActionListener {
     private int holePosition; // Store the position of the hole
 
     public EightController() {
@@ -12,9 +15,13 @@ public class EightController extends JLabel implements VetoableChangeListener {
         holePosition = 0; 
     }
 
-    public void restart(int holePosition) {
+    public void restart(int[] labels) {
         setText("START");
-        this.holePosition = holePosition; // Reset hole position
+        for (int i = 0; i < labels.length; i++) {
+            if (labels[i] == 9) {
+                holePosition = i+1; 
+            }
+        }
     }
 
     @Override
@@ -42,5 +49,15 @@ public class EightController extends JLabel implements VetoableChangeListener {
         int riga2 = (position2 - 1) / 3;
         int colonna2 = (position2 - 1) % 3;
         return Math.abs(riga1 - riga2) + Math.abs(colonna1 - colonna2) == 1;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        // retrieve the Array from the the restartButton's properties
+        JButton button = (JButton) ae.getSource();
+        if(button.getActionCommand().equals("restart")){
+            int[] retrievedArray = (int[]) button.getClientProperty("labels");
+            this.restart(retrievedArray);
+        }
     }
 }
