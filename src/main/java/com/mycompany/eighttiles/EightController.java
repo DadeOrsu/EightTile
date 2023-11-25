@@ -9,7 +9,7 @@ import javax.swing.JButton;
 
 public class EightController extends JLabel implements VetoableChangeListener, ActionListener {
     private int holePosition; // Store the position of the hole
-
+    
     public EightController() {
         super("START");
         holePosition = 0; 
@@ -27,7 +27,7 @@ public class EightController extends JLabel implements VetoableChangeListener, A
     @Override
     public void vetoableChange(PropertyChangeEvent evt) throws PropertyVetoException {
         String propertyName = evt.getPropertyName();
-
+        
         if ("label".equals(propertyName)) {
             EightTile tile = (EightTile) evt.getSource();
             int tilePosition = tile.getPosition();
@@ -58,6 +58,16 @@ public class EightController extends JLabel implements VetoableChangeListener, A
         if(button.getActionCommand().equals("restart")){
             int[] retrievedArray = (int[]) button.getClientProperty("labels");
             this.restart(retrievedArray);
+        }
+        if(button.getActionCommand().equals("flip")){
+            if(holePosition == 9){
+                EightTile t1 = (EightTile) button.getClientProperty("eightTile1");
+                EightTile t2 = (EightTile) button.getClientProperty("eightTile2");
+                String tempText = t1.getText();
+                t1.setText(t2.getText());
+                t2.setText(tempText);
+        
+            }
         }
     }
 }

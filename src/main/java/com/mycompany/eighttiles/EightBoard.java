@@ -50,7 +50,12 @@ public class EightBoard extends javax.swing.JFrame {
                 hole = tiles[i];
         }
  
-        // compute the first permutation
+        // setup the flip button
+        flip.setActionCommand("flip");
+        flip.putClientProperty("eightTile1", eightTile1);
+        flip.putClientProperty("eightTile2", eightTile2);
+        flip.addActionListener(eightController1);
+        // compute the first permutation and setup the restart button
         permuteArray(labels);
         restartButton.setActionCommand("restart");
         restartButton.putClientProperty("labels", labels);
