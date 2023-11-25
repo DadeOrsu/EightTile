@@ -1,8 +1,6 @@
 package com.mycompany.eighttiles;
 import java.awt.event.ActionEvent;
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -241,7 +239,6 @@ public class EightBoard extends javax.swing.JFrame {
     
     private void eightTilePressed(EightTile eightTile){
          try {
-            /*TODO: passare hole al metodo set label*/
             String oldLabel = eightTile.getLabel();
             eightTile.setLabel(9);
             int[] newLabels = {0,0,0,0,0,0,0,0,0};
