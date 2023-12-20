@@ -13,6 +13,11 @@ public class EightTile extends JButton implements ActionListener {
     
     public EightTile() {}
     
+    /**
+     * costructor that initializes the tile
+     * 
+     * @param position position of the tile
+     */
     public EightTile(int position) {
         super(String.valueOf(0)); 
         this.label = 0;        
@@ -20,15 +25,32 @@ public class EightTile extends JButton implements ActionListener {
         this.updateBackgroundColor();
     }
 
-
+    /**
+     * method to get the position of the tile
+     * 
+     * @return the position of the tile
+     */
     public int getPosition() {
         return position;
     }
 
+    /**
+     * method to get the label of the tile
+     * 
+     * @return the label of the tile 
+     */
     @Override
     public String getLabel(){
         return Integer.toString(label);
     }
+    
+    /**
+     * method to set the label of the tile
+     * 
+     * @param label
+     * @throws InterruptedException 
+     */
+    
     public void setLabel(int label) throws InterruptedException {
         int oldLabel = this.label;
         try{
@@ -54,15 +76,31 @@ public class EightTile extends JButton implements ActionListener {
             throw new InterruptedException();
         }
     }
-
+    
+    
+    /**
+     * method to add a vetoable change listener to the tile
+     * 
+     * @param l 
+     */
     public void addVetoableChangeListener(VetoableChangeListener l){
         vetos.addVetoableChangeListener(l);
     }
     
+    /**
+     * method to remove a vetoable change listener to the tile
+     * 
+     * @param l 
+     */
     public void removeVetoableChangeListener(VetoableChangeListener l){
         vetos.removeVetoableChangeListener(l);
     }
     
+    
+    /**
+     * method to update the backgorund color of the tile
+     * 
+     */
     public void updateBackgroundColor() {
         if (label == 9) {
             setBackground(Color.GRAY);  
@@ -73,6 +111,12 @@ public class EightTile extends JButton implements ActionListener {
         }
     }
     
+    
+    /**
+     * method used when the game restarted
+     * 
+     * @param labels a permutation of the labels
+     */
     public void restart(int[] labels){
         this.label = labels[this.position - 1];
         if(label == 9)
@@ -82,6 +126,11 @@ public class EightTile extends JButton implements ActionListener {
         this.updateBackgroundColor();
     }
 
+    /**
+     * action perfordmed to manage the pression of the restart button 
+     * 
+     * @param ae 
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         // retrieve the Array from the the restartButton's properties

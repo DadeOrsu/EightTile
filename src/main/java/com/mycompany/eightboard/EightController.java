@@ -10,11 +10,19 @@ import javax.swing.JButton;
 public class EightController extends JLabel implements VetoableChangeListener, ActionListener {
     private int holePosition; // Store the position of the hole
     
+    /**
+     * constructor used to initialize the EightController variables
+     */
     public EightController() {
         super("START");
         holePosition = 0; 
     }
-
+    
+    /**
+     * method used when you restart the game to set up the EightController
+     * 
+     * @param labels array containing the new labels when you restart the game.
+     */
     public void restart(int[] labels) {
         setText("START");
         for (int i = 0; i < labels.length; i++) {
@@ -23,7 +31,12 @@ public class EightController extends JLabel implements VetoableChangeListener, A
             }
         }
     }
-
+    
+    /**
+    * vetoable change listener that checks if the the action is legal
+    * 
+    * @param evt event
+    */
     @Override
     public void vetoableChange(PropertyChangeEvent evt) throws PropertyVetoException {
         String propertyName = evt.getPropertyName();
@@ -43,6 +56,13 @@ public class EightController extends JLabel implements VetoableChangeListener, A
         }
     }
 
+     /**
+     * method to see if two tiles are adjacent
+     * 
+     * @param position1 position of the first tile.
+     * @param position2 position of the second tile.
+     * @return true if the tiles are adjacent, false otherwhise.
+     */
     private boolean isAdjacent(int position1, int position2) {
         int riga1 = (position1 - 1) / 3;
         int colonna1 = (position1 - 1) % 3;
@@ -51,6 +71,12 @@ public class EightController extends JLabel implements VetoableChangeListener, A
         return Math.abs(riga1 - riga2) + Math.abs(colonna1 - colonna2) == 1;
     }
 
+    
+    /**
+     * method to perform an action when restart or flip button are clicked
+     * 
+     * @param ae avent 
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         // retrieve the Array from the the restartButton's properties

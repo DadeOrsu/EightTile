@@ -60,7 +60,7 @@ public class EightBoard extends javax.swing.JFrame {
         restartButton.setActionCommand("restart");
         restartButton.putClientProperty("labels", labels);
         
-        /* TODO: aggiungere next hole position */
+
         for(int i = 0;i<labels.length;i++){
             if(labels[i] == 9)
                 nextHole = tiles[i];
@@ -85,7 +85,12 @@ public class EightBoard extends javax.swing.JFrame {
         // Add the Eight Controller to the list of the action listeners
         restartButton.addActionListener(eightController1);
     }
-        
+     
+    /**
+     * function to compute a permutation of the array
+     * 
+     * @param array array of integers between 1 and 9 
+     */
      public static void permuteArray(int[] array) {
         Random random = new Random();
 
@@ -242,6 +247,12 @@ public class EightBoard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    
+    /**
+     * action performed when you try to swap move a tile
+     * 
+     * @param eightTile the tile that has been clicked
+     */
     private void eightTilePressed(EightTile eightTile){
          try {
             String oldLabel = eightTile.getLabel();
@@ -297,9 +308,7 @@ public class EightBoard extends javax.swing.JFrame {
         
     }//GEN-LAST:event_flipActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
