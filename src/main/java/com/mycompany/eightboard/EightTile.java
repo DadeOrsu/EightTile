@@ -129,7 +129,7 @@ public class EightTile extends JButton implements ActionListener {
     /**
      * action perfordmed to manage the pression of the restart button 
      * 
-     * @param ae 
+     * @param ae event 
      */
     @Override
     public void actionPerformed(ActionEvent ae) {
