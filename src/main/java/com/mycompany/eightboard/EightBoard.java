@@ -204,7 +204,7 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile9);
 
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
         jPanel2.add(eightController1);
 
         flip.setText("FLIP");
