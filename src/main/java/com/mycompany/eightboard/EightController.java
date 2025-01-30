@@ -74,7 +74,7 @@ public class EightController extends JLabel implements VetoableChangeListener, A
 
     
     /**
-     * method to perform an action when restart or flip button are clicked
+     * method to perform an action when restart button is clicked
      * 
      * @param ae avent 
      */

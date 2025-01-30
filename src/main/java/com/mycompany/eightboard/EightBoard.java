@@ -1,6 +1,4 @@
 package com.mycompany.eightboard;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Random;
 
 /**
@@ -15,9 +13,11 @@ public class EightBoard extends javax.swing.JFrame {
 
     private EightTile hole;
     private EightTile nextHole;
+    public int[] labels;
+    EightTile[] tiles;
     public EightBoard() {
         initComponents();
-        EightTile[] tiles = new EightTile[]{
+        tiles = new EightTile[]{
             eightTile1,
             eightTile2,
             eightTile3,
@@ -36,8 +36,7 @@ public class EightBoard extends javax.swing.JFrame {
         
         
         // assign the labels to the tiles
-        
-        int[] labels = {1,2,3,4,5,6,7,8,9};
+        labels = new int[]{1,2,3,4,5,6,7,8,9};
         permuteArray(labels);
         for (EightTile tile : tiles) {
             tile.restart(labels);
@@ -68,16 +67,6 @@ public class EightBoard extends javax.swing.JFrame {
                 nextHole = tiles[i];
         }
          
-        
-        // Add an action listener that permutes the labels
-        restartButton.addActionListener((ActionEvent ae) -> {
-            permuteArray(labels);
-            hole = nextHole;
-            for(int i = 0;i<labels.length;i++){
-                if(labels[i] == 9)
-                    nextHole = tiles[i];
-            }
-        });
         
         // Add the tiles to the list of the action listeners
         for (EightTile tile : tiles) {
@@ -303,7 +292,12 @@ public class EightBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_eightTile2ActionPerformed
 
     private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
-
+            permuteArray(labels);
+            hole = nextHole;
+            for(int i = 0;i<labels.length;i++){
+                if(labels[i] == 9)
+                    nextHole = tiles[i];
+            }
     }//GEN-LAST:event_restartButtonActionPerformed
 
     private void flipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flipActionPerformed
