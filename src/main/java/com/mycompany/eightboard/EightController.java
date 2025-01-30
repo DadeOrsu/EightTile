@@ -36,6 +36,7 @@ public class EightController extends JLabel implements VetoableChangeListener, A
     * vetoable change listener that checks if the the action is legal
     * 
     * @param evt event
+    * @throws java.beans.PropertyVetoException
     */
     @Override
     public void vetoableChange(PropertyChangeEvent evt) throws PropertyVetoException {
@@ -85,15 +86,9 @@ public class EightController extends JLabel implements VetoableChangeListener, A
             int[] retrievedArray = (int[]) button.getClientProperty("labels");
             this.restart(retrievedArray);
         }
-        if(button.getActionCommand().equals("flip")){
-            if(holePosition == 9){
-                EightTile t1 = (EightTile) button.getClientProperty("eightTile1");
-                EightTile t2 = (EightTile) button.getClientProperty("eightTile2");
-                String tempText = t1.getText();
-                t1.setText(t2.getText());
-                t2.setText(tempText);
-        
-            }
-        }
+    }
+    
+    public int getHolePosition(){
+        return this.holePosition;
     }
 }
