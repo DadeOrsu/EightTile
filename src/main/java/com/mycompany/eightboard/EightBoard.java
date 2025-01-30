@@ -55,19 +55,6 @@ public class EightBoard extends javax.swing.JFrame {
         flip.setActionCommand("flip");
         flip.putClientProperty("eightTile1", eightTile1);
         flip.putClientProperty("eightTile2", eightTile2);
-        flip.addActionListener(eightController1);
-        flip.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(eightController1.getHolePosition() == 9){
-                    EightTile t1 = (EightTile) flip.getClientProperty("eightTile1");
-                    EightTile t2 = (EightTile) flip.getClientProperty("eightTile2");
-                    String tempText = t1.getText();
-                    t1.setText(t2.getText());
-                    t2.setText(tempText);
-                }
-            }
-        });
 
         
         // compute the first permutation and setup the restart button
@@ -320,7 +307,13 @@ public class EightBoard extends javax.swing.JFrame {
     }//GEN-LAST:event_restartButtonActionPerformed
 
     private void flipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flipActionPerformed
-
+        if(eightController1.getHolePosition() == 9){
+            EightTile t1 = (EightTile) flip.getClientProperty("eightTile1");
+            EightTile t2 = (EightTile) flip.getClientProperty("eightTile2");
+            String tempText = t1.getText();
+            t1.setText(t2.getText());
+            t2.setText(tempText);
+        }
     }//GEN-LAST:event_flipActionPerformed
 
 
