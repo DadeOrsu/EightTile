@@ -65,11 +65,11 @@ public class EightController extends JLabel implements VetoableChangeListener, A
      * @return true if the tiles are adjacent, false otherwhise.
      */
     private boolean isAdjacent(int position1, int position2) {
-        int riga1 = (position1 - 1) / 3;
-        int colonna1 = (position1 - 1) % 3;
-        int riga2 = (position2 - 1) / 3;
-        int colonna2 = (position2 - 1) % 3;
-        return Math.abs(riga1 - riga2) + Math.abs(colonna1 - colonna2) == 1;
+        int row1 = (position1 - 1) / 3;
+        int column1 = (position1 - 1) % 3;
+        int row2 = (position2 - 1) / 3;
+        int column2 = (position2 - 1) % 3;
+        return Math.abs(row1 - row2) + Math.abs(column1 - column2) == 1;
     }
 
     
