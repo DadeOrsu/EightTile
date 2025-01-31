@@ -5,9 +5,10 @@ import javax.swing.JLabel;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyVetoException;
 import java.beans.VetoableChangeListener;
+import java.io.Serializable;
 import javax.swing.JButton;
 
-public class EightController extends JLabel implements VetoableChangeListener, ActionListener {
+public class EightController extends JLabel implements VetoableChangeListener, ActionListener, Serializable {
     private int holePosition; // Store the position of the hole
     
     /**

@@ -4,9 +4,10 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.*;
+import java.io.Serializable;
 import javax.swing.SwingUtilities;
 
-public class EightTile extends JButton implements ActionListener {
+public class EightTile extends JButton implements ActionListener, Serializable {
     private int label;  
     private int position;    
     private VetoableChangeSupport vetos = new VetoableChangeSupport(this);
@@ -66,7 +67,7 @@ public class EightTile extends JButton implements ActionListener {
             Color oldBackground = getBackground();
             setBackground(Color.RED);
 
-            // Utilizza SwingUtilities.invokeLater per eseguire il codice nell'EDT
+            // Use swingutilities to make it blink if the veto is negative.
             SwingUtilities.invokeLater(() -> {
                 try {
                     Thread.sleep(1000);
