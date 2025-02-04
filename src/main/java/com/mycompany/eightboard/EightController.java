@@ -16,7 +16,6 @@ public class EightController extends JLabel implements VetoableChangeListener, A
      */
     public EightController() {
         super("START");
-        holePosition = 0; 
     }
     
     /**
