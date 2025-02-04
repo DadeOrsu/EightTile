@@ -348,7 +348,25 @@ public class EightBoard extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_flipActionPerformed
 
+    public static void main(String[] args) {
+        /* Set the Nimbus look and feel */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(EightBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
 
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(() -> {
+            EightBoard board = new EightBoard();
+            board.setVisible(true);
+        });
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
