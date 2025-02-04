@@ -12,18 +12,19 @@ public class EightTile extends JButton implements ActionListener, Serializable {
     private int position;    
     private VetoableChangeSupport vetos = new VetoableChangeSupport(this);
     
-    public EightTile() {}
-    
-    /**
-     * costructor that initializes the tile
-     * 
-     * @param position position of the tile
-     */
-    public EightTile(int position) {
+    public EightTile() {
         super(String.valueOf(0)); 
         this.label = 0;        
-        this.position = position;       
+        this.position = 0;       
         this.updateBackgroundColor();
+    }
+    /*
+    * method to set the position of the tile
+    *
+    * @position the position of the tile
+    */
+    public void setPosition(int position){
+        this.position = position;
     }
 
     /**

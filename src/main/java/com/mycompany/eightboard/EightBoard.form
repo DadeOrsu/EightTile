@@ -63,7 +63,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile1ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(1)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
         <Component class="com.mycompany.eightboard.EightTile" name="eightTile2">
@@ -76,7 +76,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile2ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(2)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
         <Component class="com.mycompany.eightboard.EightTile" name="eightTile3">
@@ -89,7 +89,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile3ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(3)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
         <Component class="com.mycompany.eightboard.EightTile" name="eightTile4">
@@ -102,7 +102,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile4ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(4)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
         <Component class="com.mycompany.eightboard.EightTile" name="eightTile5">
@@ -115,7 +115,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile5ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(5)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
         <Component class="com.mycompany.eightboard.EightTile" name="eightTile6">
@@ -128,7 +128,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile6ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(6)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
         <Component class="com.mycompany.eightboard.EightTile" name="eightTile7">
@@ -141,7 +141,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile7ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(7)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
         <Component class="com.mycompany.eightboard.EightTile" name="eightTile8">
@@ -154,7 +154,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile8ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(8)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
         <Component class="com.mycompany.eightboard.EightTile" name="eightTile9">
@@ -167,7 +167,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eightTile9ActionPerformed"/>
           </Events>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile(9)"/>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new com.mycompany.eightboard.EightTile()"/>
           </AuxValues>
         </Component>
       </SubComponents>

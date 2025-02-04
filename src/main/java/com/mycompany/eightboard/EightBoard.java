@@ -28,10 +28,12 @@ public class EightBoard extends javax.swing.JFrame {
             eightTile8, 
             eightTile9
         };
-        // add the Vetoable Change Listener to each tile
-        
+        // add the Vetoable Change Listener to each tile and assign a position
+        int pos = 1;
         for (EightTile tile : tiles) {
+            tile.setPosition(pos);
             tile.addVetoableChangeListener(eightController1);
+            pos++;
         }
         
         
@@ -105,15 +107,15 @@ public class EightBoard extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        eightTile1 = new com.mycompany.eightboard.EightTile(1);
-        eightTile2 = new com.mycompany.eightboard.EightTile(2);
-        eightTile3 = new com.mycompany.eightboard.EightTile(3);
-        eightTile4 = new com.mycompany.eightboard.EightTile(4);
-        eightTile5 = new com.mycompany.eightboard.EightTile(5);
-        eightTile6 = new com.mycompany.eightboard.EightTile(6);
-        eightTile7 = new com.mycompany.eightboard.EightTile(7);
-        eightTile8 = new com.mycompany.eightboard.EightTile(8);
-        eightTile9 = new com.mycompany.eightboard.EightTile(9);
+        eightTile1 = new com.mycompany.eightboard.EightTile();
+        eightTile2 = new com.mycompany.eightboard.EightTile();
+        eightTile3 = new com.mycompany.eightboard.EightTile();
+        eightTile4 = new com.mycompany.eightboard.EightTile();
+        eightTile5 = new com.mycompany.eightboard.EightTile();
+        eightTile6 = new com.mycompany.eightboard.EightTile();
+        eightTile7 = new com.mycompany.eightboard.EightTile();
+        eightTile8 = new com.mycompany.eightboard.EightTile();
+        eightTile9 = new com.mycompany.eightboard.EightTile();
         jPanel2 = new javax.swing.JPanel();
         eightController1 = new com.mycompany.eightboard.EightController();
         flip = new javax.swing.JButton();
