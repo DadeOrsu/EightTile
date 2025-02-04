@@ -11,9 +11,13 @@ public class EightTile extends JButton implements ActionListener, Serializable {
     private int label;  
     private int position;    
     private VetoableChangeSupport vetos;
+    private PropertyChangeSupport changes;
+
     
     public EightTile() {
+        super();
         this.vetos = new VetoableChangeSupport(this);
+        this.changes = new PropertyChangeSupport(this);
     }
     /*
     * method to set the position of the tile
@@ -38,8 +42,7 @@ public class EightTile extends JButton implements ActionListener, Serializable {
      * 
      * @return the label of the tile 
      */
-    @Override
-    public String getLabel(){
+    public String getTileLabel(){
         return Integer.toString(label);
     }
     
@@ -50,11 +53,12 @@ public class EightTile extends JButton implements ActionListener, Serializable {
      * @throws InterruptedException 
      */
     
-    public void setLabel(int label) throws InterruptedException {
+    public void setTileLabel(int label) throws InterruptedException {
         int oldLabel = this.label;
         try{
             vetos.fireVetoableChange("label",oldLabel,label);
             this.label = label;
+            changes.firePropertyChange("label", oldLabel, label);
             if(this.label==9)
                 setText(" ");
             else
@@ -95,7 +99,7 @@ public class EightTile extends JButton implements ActionListener, Serializable {
         vetos.removeVetoableChangeListener(l);
     }
     
-    
+
     /**
      * method to update the backgorund color of the tile
      * 

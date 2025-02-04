@@ -284,8 +284,8 @@ public class EightBoard extends javax.swing.JFrame {
      */
     private void eightTilePressed(EightTile eightTile){
          try {
-            String oldLabel = eightTile.getLabel();
-            eightTile.setLabel(9);
+            String oldLabel = eightTile.getTileLabel();
+            eightTile.setTileLabel(9);
             int[] newLabels = {0,0,0,0,0,0,0,0,0};
             newLabels[hole.getPosition()-1]=Integer.parseInt(oldLabel);
             hole.restart(newLabels);
