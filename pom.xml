@@ -19,16 +19,4 @@
             <url>file:${project.basedir}/lib</url>
         </repository>
     </repositories>
-    <dependencies>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>EightTile</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>unknown.binary</groupId>
-            <artifactId>EightController</artifactId>
-            <version>SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>
