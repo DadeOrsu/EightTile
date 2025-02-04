@@ -13,8 +13,8 @@ public class EightBoard extends javax.swing.JFrame {
 
     private EightTile hole;
     private EightTile nextHole;
-    public int[] labels;
-    EightTile[] tiles;
+    private int[] labels;
+    private EightTile[] tiles;
     public EightBoard() {
         initComponents();
         tiles = new EightTile[]{
