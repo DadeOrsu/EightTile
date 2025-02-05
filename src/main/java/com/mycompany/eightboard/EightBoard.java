@@ -161,7 +161,6 @@ public class EightBoard extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 3));
 
-        eightTile1.setText(" ");
         eightTile1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile1ActionPerformed(evt);
@@ -169,7 +168,6 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile1);
 
-        eightTile2.setText(" ");
         eightTile2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile2ActionPerformed(evt);
@@ -177,7 +175,6 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile2);
 
-        eightTile3.setText(" ");
         eightTile3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile3ActionPerformed(evt);
@@ -185,7 +182,6 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile3);
 
-        eightTile4.setText(" ");
         eightTile4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile4ActionPerformed(evt);
@@ -193,7 +189,6 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile4);
 
-        eightTile5.setText(" ");
         eightTile5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile5ActionPerformed(evt);
@@ -201,7 +196,6 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile5);
 
-        eightTile6.setText(" ");
         eightTile6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile6ActionPerformed(evt);
@@ -209,7 +203,6 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile6);
 
-        eightTile7.setText(" ");
         eightTile7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile7ActionPerformed(evt);
@@ -217,7 +210,6 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile7);
 
-        eightTile8.setText(" ");
         eightTile8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile8ActionPerformed(evt);
@@ -225,7 +217,6 @@ public class EightBoard extends javax.swing.JFrame {
         });
         jPanel1.add(eightTile8);
 
-        eightTile9.setText(" ");
         eightTile9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eightTile9ActionPerformed(evt);
