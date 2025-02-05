@@ -42,8 +42,8 @@ public class EightTile extends JButton implements ActionListener, Serializable {
      * 
      * @return the label of the tile 
      */
-    public String getTileLabel(){
-        return Integer.toString(label);
+    public int getTileLabel(){
+        return label;
     }
     
     /**
@@ -120,8 +120,8 @@ public class EightTile extends JButton implements ActionListener, Serializable {
      * 
      * @param labels a permutation of the labels
      */
-    public void restart(int[] labels){
-        this.label = labels[this.position - 1];
+    public void restart(int label){
+        this.label = label;
         if(label == 9)
             setText(String.valueOf(" "));
         else
@@ -140,7 +140,7 @@ public class EightTile extends JButton implements ActionListener, Serializable {
         JButton button = (JButton) ae.getSource();
         if(button.getActionCommand().equals("restart")){
             int[] retrievedArray = (int[]) button.getClientProperty("labels");
-            this.restart(retrievedArray);
+            this.restart(retrievedArray[this.position - 1]);
         }
     }
 }

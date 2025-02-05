@@ -40,8 +40,8 @@ public class EightBoard extends javax.swing.JFrame {
         // assign the labels to the tiles
         labels = new int[]{1,2,3,4,5,6,7,8,9};
         permuteArray(labels);
-        for (EightTile tile : tiles) {
-            tile.restart(labels);
+        for (int i=0; i<labels.length;i++) {
+            tiles[i].restart(labels[i]);
         }
         // find the hole position and tell it to the controller
         eightController1.restart(labels);
@@ -284,11 +284,9 @@ public class EightBoard extends javax.swing.JFrame {
      */
     private void eightTilePressed(EightTile eightTile){
          try {
-            String oldLabel = eightTile.getTileLabel();
+            int oldLabel = eightTile.getTileLabel();
             eightTile.setTileLabel(9);
-            int[] newLabels = {0,0,0,0,0,0,0,0,0};
-            newLabels[hole.getPosition()-1]=Integer.parseInt(oldLabel);
-            hole.restart(newLabels);
+            hole.restart(oldLabel);
             hole = eightTile;
         } catch (InterruptedException ex) {}
     }
