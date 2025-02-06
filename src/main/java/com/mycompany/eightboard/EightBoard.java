@@ -70,6 +70,7 @@ public class EightBoard extends javax.swing.JFrame {
         
         // Add the Eight Controller to the list of the action listeners
         restartButton.addActionListener(eightController1);
+        flip.addActionListener(eightController1);
     }
      
     /**
@@ -164,11 +165,6 @@ public class EightBoard extends javax.swing.JFrame {
         jPanel2.add(eightController1);
 
         flip.setText("FLIP");
-        flip.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                flipActionPerformed(evt);
-            }
-        });
         jPanel2.add(flip);
 
         restartButton.setText("RESTART");
@@ -224,16 +220,6 @@ public class EightBoard extends javax.swing.JFrame {
 
    
                                       
-    private void flipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flipActionPerformed
-        if(eightController1.getHolePosition() == 9){
-            EightTile t1 = (EightTile) flip.getClientProperty("eightTile1");
-            EightTile t2 = (EightTile) flip.getClientProperty("eightTile2");
-            int tempLabel = t1.getTileLabel();
-            t1.restart(t2.getTileLabel());
-            t2.restart(tempLabel);
-        }
-    }//GEN-LAST:event_flipActionPerformed
-
     private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
         permuteArray(labels);
         hole = nextHole;

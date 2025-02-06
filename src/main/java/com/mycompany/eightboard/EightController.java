@@ -86,6 +86,15 @@ public class EightController extends JLabel implements VetoableChangeListener, A
             int[] retrievedArray = (int[]) button.getClientProperty("labels");
             this.restart(retrievedArray);
         }
+        if(button.getActionCommand().equals("flip")){
+            if(holePosition == 9){
+                EightTile t1 = (EightTile) button.getClientProperty("eightTile1");
+                EightTile t2 = (EightTile) button.getClientProperty("eightTile2");
+                int tempLabel = t1.getTileLabel();
+                t1.restart(t2.getTileLabel());
+                t2.restart(tempLabel);
+            }
+        }
     }
     
     public int getHolePosition(){
