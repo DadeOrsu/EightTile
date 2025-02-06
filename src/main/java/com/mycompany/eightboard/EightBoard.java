@@ -1,4 +1,6 @@
 package com.mycompany.eightboard;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
 /**
@@ -34,6 +36,11 @@ public class EightBoard extends javax.swing.JFrame {
             tile.setPosition(pos);
             tile.addVetoableChangeListener(eightController1);
             pos++;
+        }
+        
+        // add ActionListener for each tile
+        for (EightTile tile : tiles) {
+            tile.addActionListener(eightTileListener);
         }
         
         
@@ -160,68 +167,14 @@ public class EightBoard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 3));
-
-        eightTile1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile1ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile1);
-
-        eightTile2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile2ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile2);
-
-        eightTile3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile3ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile3);
-
-        eightTile4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile4ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile4);
-
-        eightTile5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile5ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile5);
-
-        eightTile6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile6ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile6);
-
-        eightTile7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile7ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile7);
-
-        eightTile8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile8ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile8);
-
-        eightTile9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eightTile9ActionPerformed(evt);
-            }
-        });
         jPanel1.add(eightTile9);
 
         jPanel2.setLayout(new java.awt.GridLayout(1, 0));
@@ -269,55 +222,24 @@ public class EightBoard extends javax.swing.JFrame {
     
     
     /**
-     * action performed when you try to swap move a tile
+     * action performed when you try to move a tile
      * 
      * @param eightTile the tile that has been clicked
      */
-    private void eightTilePressed(EightTile eightTile){
-         try {
-            int oldLabel = eightTile.getTileLabel();
-            eightTile.setTileLabel(9);
-            hole.restart(oldLabel);
-            hole = eightTile;
-        } catch (InterruptedException ex) {}
-    }
+    private final java.awt.event.ActionListener eightTileListener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent evt) {
+            try {
+                EightTile clickedTile = (EightTile) evt.getSource();
+                int oldLabel = clickedTile.getTileLabel();
+                clickedTile.setTileLabel(9);
+                hole.restart(oldLabel);
+                hole = clickedTile;
+            } catch (InterruptedException ex) { }
+        }
+    };
+
     
-    private void eightTile8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile8ActionPerformed
-        eightTilePressed(eightTile8);
-    }//GEN-LAST:event_eightTile8ActionPerformed
-
-    private void eightTile4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile4ActionPerformed
-        eightTilePressed(eightTile4);
-    }//GEN-LAST:event_eightTile4ActionPerformed
-
-    private void eightTile5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile5ActionPerformed
-        eightTilePressed(eightTile5);
-    }//GEN-LAST:event_eightTile5ActionPerformed
-
-    private void eightTile3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile3ActionPerformed
-        eightTilePressed(eightTile3);
-    }//GEN-LAST:event_eightTile3ActionPerformed
-
-    private void eightTile1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile1ActionPerformed
-        eightTilePressed(eightTile1);
-    }//GEN-LAST:event_eightTile1ActionPerformed
-
-    private void eightTile7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile7ActionPerformed
-        eightTilePressed(eightTile7);
-    }//GEN-LAST:event_eightTile7ActionPerformed
-
-    private void eightTile9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile9ActionPerformed
-        eightTilePressed(eightTile9);
-    }//GEN-LAST:event_eightTile9ActionPerformed
-
-    private void eightTile6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile6ActionPerformed
-        eightTilePressed(eightTile6);
-    }//GEN-LAST:event_eightTile6ActionPerformed
-
-    private void eightTile2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightTile2ActionPerformed
-        eightTilePressed(eightTile2);
-    }//GEN-LAST:event_eightTile2ActionPerformed
-
     private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
             permuteArray(labels);
             hole = nextHole;
