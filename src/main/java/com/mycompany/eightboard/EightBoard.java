@@ -1,7 +1,11 @@
 package com.mycompany.eightboard;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  *
@@ -92,13 +96,10 @@ public class EightBoard extends javax.swing.JFrame {
      * @param array array of integers between 1 and 9 
      */
      public static void permuteArray(int[] array) {
-        Random random = new Random();
-
-        for (int i = array.length - 1; i > 0; i--) {
-            int index = random.nextInt(i + 1);
-            int temp = array[i];
-            array[i] = array[index];
-            array[index] = temp;
+        List<Integer> list = IntStream.of(array).boxed().collect(Collectors.toList());
+        Collections.shuffle(list, new Random());
+        for (int i = 0; i < array.length; i++) {
+            array[i] = list.get(i);
         }
     }
      
@@ -239,16 +240,8 @@ public class EightBoard extends javax.swing.JFrame {
         }
     };
 
-    
-    private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
-            permuteArray(labels);
-            hole = nextHole;
-            for(int i = 0;i<labels.length;i++){
-                if(labels[i] == 9)
-                    nextHole = tiles[i];
-            }
-    }//GEN-LAST:event_restartButtonActionPerformed
-
+   
+                                      
     private void flipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flipActionPerformed
         if(eightController1.getHolePosition() == 9){
             EightTile t1 = (EightTile) flip.getClientProperty("eightTile1");
@@ -258,6 +251,15 @@ public class EightBoard extends javax.swing.JFrame {
             t2.restart(tempLabel);
         }
     }//GEN-LAST:event_flipActionPerformed
+
+    private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
+        permuteArray(labels);
+        hole = nextHole;
+        for(int i = 0;i<labels.length;i++){
+            if(labels[i] == 9)
+                nextHole = tiles[i];
+        }
+    }//GEN-LAST:event_restartButtonActionPerformed
 
     public static void main(String[] args) {
         /* Set the Nimbus look and feel */
