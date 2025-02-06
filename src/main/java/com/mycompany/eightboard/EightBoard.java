@@ -29,11 +29,12 @@ public class EightBoard extends javax.swing.JFrame {
             eightTile7, eightTile8, eightTile9
         };
         
-        // add the Vetoable Change Listener to each tile and assign a position
+        
         for (int i = 0; i < tiles.length ; i++) {
             tiles[i].setPosition(i+1);
             tiles[i].addVetoableChangeListener(eightController1);
             tiles[i].addActionListener(eightTileListener);
+            restartButton.addActionListener(tiles[i]);
         }
         
         
@@ -66,11 +67,6 @@ public class EightBoard extends javax.swing.JFrame {
                 nextHole = tiles[i];
         }
          
-        
-        // Add the tiles to the list of the action listeners
-        for (EightTile tile : tiles) {
-            restartButton.addActionListener(tile);
-        } 
         
         // Add the Eight Controller to the list of the action listeners
         restartButton.addActionListener(eightController1);
