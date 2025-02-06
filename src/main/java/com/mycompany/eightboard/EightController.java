@@ -91,4 +91,8 @@ public class EightController extends JLabel implements VetoableChangeListener, A
     public int getHolePosition(){
         return this.holePosition;
     }
+    
+    public void setHolePosition(int holePosition){
+        this.holePosition = holePosition;
+    }
 }

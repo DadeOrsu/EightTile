@@ -47,7 +47,7 @@ public class EightBoard extends javax.swing.JFrame {
                 hole = tiles[i];
         }
         // find the hole position and tell it to the controller
-        eightController1.restart(labels);
+        eightController1.setHolePosition(hole.getPosition());
         
  
         // setup the flip button
