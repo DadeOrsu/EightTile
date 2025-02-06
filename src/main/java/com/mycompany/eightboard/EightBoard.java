@@ -37,20 +37,17 @@ public class EightBoard extends javax.swing.JFrame {
         }
         
         
-        // assign the labels to the tiles
+        // assign the labels to the tiles and find the hole position
         labels = new int[]{1,2,3,4,5,6,7,8,9};
         permuteArray(labels);
         for (int i=0; i<labels.length;i++) {
             tiles[i].restart(labels[i]);
+            if(labels[i] == 9)
+                hole = tiles[i];
         }
         // find the hole position and tell it to the controller
         eightController1.restart(labels);
         
-        //find the hole
-        for(int i = 0;i<labels.length;i++){
-            if(labels[i] == 9)
-                hole = tiles[i];
-        }
  
         // setup the flip button
         flip.setActionCommand("flip");
