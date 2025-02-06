@@ -24,27 +24,16 @@ public class EightBoard extends javax.swing.JFrame {
     public EightBoard() {
         initComponents();
         tiles = new EightTile[]{
-            eightTile1,
-            eightTile2,
-            eightTile3,
-            eightTile4,
-            eightTile5,
-            eightTile6,
-            eightTile7,
-            eightTile8, 
-            eightTile9
+            eightTile1, eightTile2, eightTile3,
+            eightTile4, eightTile5, eightTile6,
+            eightTile7, eightTile8, eightTile9
         };
-        // add the Vetoable Change Listener to each tile and assign a position
-        int pos = 1;
-        for (EightTile tile : tiles) {
-            tile.setPosition(pos);
-            tile.addVetoableChangeListener(eightController1);
-            pos++;
-        }
         
-        // add ActionListener for each tile
-        for (EightTile tile : tiles) {
-            tile.addActionListener(eightTileListener);
+        // add the Vetoable Change Listener to each tile and assign a position
+        for (int i = 0; i < tiles.length ; i++) {
+            tiles[i].setPosition(i+1);
+            tiles[i].addVetoableChangeListener(eightController1);
+            tiles[i].addActionListener(eightTileListener);
         }
         
         
