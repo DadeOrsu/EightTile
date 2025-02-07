@@ -15,7 +15,9 @@ public class EightTile extends JButton implements ActionListener, Serializable {
 
     
     public EightTile() {
+        // Initialize support for vetoable property changes
         this.vetos = new VetoableChangeSupport(this);
+        // initialize support for property change notificarions
         this.changes = new PropertyChangeSupport(this);
     }
     /*
@@ -46,12 +48,13 @@ public class EightTile extends JButton implements ActionListener, Serializable {
     }
     
     /**
-     * method to set the label of the tile
+     * Method to be invoked when the player performs a move. 
+     * It notifies the EightBoard about the changes so that it can put a veto if 
+     * the move is illegal.
      * 
      * @param label
      * @throws InterruptedException 
      */
-    
     public void moveTile(int label) throws InterruptedException {
         int oldLabel = this.label;
         try{
@@ -78,7 +81,7 @@ public class EightTile extends JButton implements ActionListener, Serializable {
     /**
      * method to add a vetoable change listener to the tile
      * 
-     * @param l 
+     * @param l listener
      */
     public void addVetoableChangeListener(VetoableChangeListener l){
         vetos.addVetoableChangeListener(l);
@@ -87,7 +90,7 @@ public class EightTile extends JButton implements ActionListener, Serializable {
     /**
      * method to remove a vetoable change listener to the tile
      * 
-     * @param l 
+     * @param l listener
      */
     public void removeVetoableChangeListener(VetoableChangeListener l){
         vetos.removeVetoableChangeListener(l);
@@ -95,8 +98,8 @@ public class EightTile extends JButton implements ActionListener, Serializable {
     
 
     /**
-     * method to update the backgorund color of the tile
-     * 
+     * method to update the backgorund color of the tile according 
+     * to its label and position
      */
     public void updateBackgroundColor() {
         if (label == 9) {
@@ -110,9 +113,9 @@ public class EightTile extends JButton implements ActionListener, Serializable {
     
     
     /**
-     * method used when the game restarted
+     * method used set the Tile label
      * 
-     * @param labels a permutation of the labels
+     * @param label the new label
      */
     public void setTileLabel(int label){
         this.label = label;

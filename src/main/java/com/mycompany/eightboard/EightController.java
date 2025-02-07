@@ -11,10 +11,8 @@ import javax.swing.JButton;
 public class EightController extends JLabel implements VetoableChangeListener, ActionListener, Serializable {
     private int holePosition; // Store the position of the hole
     
-    /**
-     * constructor used to initialize the EightController variables
-     */
     public EightController() {
+        // at the beginning the JLabel shows "START"
         super("START");
     }
     
@@ -33,8 +31,9 @@ public class EightController extends JLabel implements VetoableChangeListener, A
     }
     
     /**
-    * vetoable change listener that checks if the the action is legal
-    * 
+    * vetoable change listener that checks if the movement of the tile is legal
+    * - it shows "OK" if it is allowed and updates its hole position, otherwise 
+    * - it shows "KO" and throws a PropertyVetoException.
     * @param evt event
     * @throws java.beans.PropertyVetoException
     */
@@ -74,8 +73,10 @@ public class EightController extends JLabel implements VetoableChangeListener, A
 
     
     /**
-     * method to perform an action when restart button is clicked
-     * 
+     * method to perform an action when restart or flip buttons are clicked.
+     * - when restart is pressed it looks for the new hole to store
+     * - when flip is pressed it checks if the swap is allowed and if possible
+     *   performs it
      * @param ae avent 
      */
     @Override
@@ -97,10 +98,20 @@ public class EightController extends JLabel implements VetoableChangeListener, A
         }
     }
     
+    /**
+     * getter of the hole position of the controller
+     * 
+     * @return the hole position used by the controller
+     */
     public int getHolePosition(){
         return this.holePosition;
     }
     
+    /**
+     * setter of the hole position of the controller
+     * 
+     * @param holePosition the new hole position
+     */
     public void setHolePosition(int holePosition){
         this.holePosition = holePosition;
     }
