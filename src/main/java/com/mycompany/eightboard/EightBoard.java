@@ -42,7 +42,7 @@ public class EightBoard extends javax.swing.JFrame {
         labels = new int[]{1,2,3,4,5,6,7,8,9};
         permuteArray(labels);
         for (int i=0; i<labels.length;i++) {
-            tiles[i].restart(labels[i]);
+            tiles[i].setTileLabel(labels[i]);
             if(labels[i] == 9)
                 hole = tiles[i];
         }
@@ -208,18 +208,18 @@ public class EightBoard extends javax.swing.JFrame {
     private final java.awt.event.ActionListener eightTileListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent evt) {
-            try {
-                EightTile clickedTile = (EightTile) evt.getSource();
+        try {
+            EightTile clickedTile = (EightTile) evt.getSource();
                 int oldLabel = clickedTile.getTileLabel();
-                clickedTile.setTileLabel(9);
-                hole.restart(oldLabel);
+                clickedTile.moveTile(9);
+                hole.setTileLabel(oldLabel);
                 hole = clickedTile;
             } catch (InterruptedException ex) { }
         }
     };
 
-   
-                                      
+    
+
     private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
         permuteArray(labels);
         hole = nextHole;

@@ -15,7 +15,6 @@ public class EightTile extends JButton implements ActionListener, Serializable {
 
     
     public EightTile() {
-        super();
         this.vetos = new VetoableChangeSupport(this);
         this.changes = new PropertyChangeSupport(this);
     }
@@ -53,17 +52,12 @@ public class EightTile extends JButton implements ActionListener, Serializable {
      * @throws InterruptedException 
      */
     
-    public void setTileLabel(int label) throws InterruptedException {
+    public void moveTile(int label) throws InterruptedException {
         int oldLabel = this.label;
         try{
             vetos.fireVetoableChange("label",oldLabel,label);
-            this.label = label;
+            this.setTileLabel(label);
             changes.firePropertyChange("label", oldLabel, label);
-            if(this.label==9)
-                setText(" ");
-            else
-                setText(String.valueOf(this.label));
-            this.updateBackgroundColor();
         }
         catch(PropertyVetoException e){
             Color oldBackground = getBackground();
@@ -120,7 +114,7 @@ public class EightTile extends JButton implements ActionListener, Serializable {
      * 
      * @param labels a permutation of the labels
      */
-    public void restart(int label){
+    public void setTileLabel(int label){
         this.label = label;
         if(label == 9)
             setText(String.valueOf(" "));
@@ -140,7 +134,7 @@ public class EightTile extends JButton implements ActionListener, Serializable {
         JButton button = (JButton) ae.getSource();
         if(button.getActionCommand().equals("restart")){
             int[] retrievedArray = (int[]) button.getClientProperty("labels");
-            this.restart(retrievedArray[this.position - 1]);
+            this.setTileLabel(retrievedArray[this.position - 1]);
         }
     }
 }
