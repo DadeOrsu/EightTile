@@ -17,19 +17,22 @@ public class EightBoard extends javax.swing.JFrame {
      * Creates new form EightBoard
      */
 
-    private EightTile hole;
-    private EightTile nextHole;
-    private int[] labels;
-    private EightTile[] tiles;
+    private EightTile hole;         // reference to the hole
+    private EightTile nextHole;     // reference to the hole position after restart
+    private int[] labels;           // array storing the labels assigned to the tiles
+    private EightTile[] tiles;      // array storing all EightTiles
     public EightBoard() {
         initComponents();
+        
+        // create an array to hold all the tiles on the board
         tiles = new EightTile[]{
             eightTile1, eightTile2, eightTile3,
             eightTile4, eightTile5, eightTile6,
             eightTile7, eightTile8, eightTile9
         };
         
-        
+        // confgure each tile by setting their position, add listeners and 
+        // linking them with restart button
         for (int i = 0; i < tiles.length ; i++) {
             tiles[i].setPosition(i+1);
             tiles[i].addVetoableChangeListener(eightController1);
@@ -38,43 +41,46 @@ public class EightBoard extends javax.swing.JFrame {
         }
         
         
-        // assign the labels to the tiles and find the hole position
+        // initialize the labels and shuffle them randomly
         labels = new int[]{1,2,3,4,5,6,7,8,9};
         permuteArray(labels);
+        
+        // assign the labels to the tiles and the hole
         for (int i=0; i<labels.length;i++) {
             tiles[i].setTileLabel(labels[i]);
             if(labels[i] == 9)
                 hole = tiles[i];
         }
-        // find the hole position and tell it to the controller
+        
+        // inform the hole position to the controller
         eightController1.setHolePosition(hole.getPosition());
         
  
-        // setup the flip button
+        // configuration of the flip button to swap the first two tiles
         flip.setActionCommand("flip");
         flip.putClientProperty("eightTile1", eightTile1);
         flip.putClientProperty("eightTile2", eightTile2);
 
         
-        // compute the first permutation and setup the restart button
+        // compute the next permutation and setup the restart button
         permuteArray(labels);
         restartButton.setActionCommand("restart");
         restartButton.putClientProperty("labels", labels);
         
-
+        // find the the new hole position after shuffling for restart
         for(int i = 0;i<labels.length;i++){
             if(labels[i] == 9)
                 nextHole = tiles[i];
         }
          
         
-        // Add the Eight Controller to the list of the action listeners
+        // register the controller for restart and flip button action
         restartButton.addActionListener(eightController1);
         flip.addActionListener(eightController1);
     }
      
     /**
-     * function to compute a permutation of the array
+     * function used to compute a permutation of the array of labels when a new game is started
      * 
      * @param array array of integers between 1 and 9 
      */
@@ -201,9 +207,7 @@ public class EightBoard extends javax.swing.JFrame {
     
     
     /**
-     * action performed when you try to move a tile
-     * 
-     * @param eightTile the tile that has been clicked
+     * ActionListener which implements the actionPerformed used when the Tile is clicked.
      */
     private final java.awt.event.ActionListener eightTileListener = new ActionListener() {
         @Override
@@ -219,7 +223,9 @@ public class EightBoard extends javax.swing.JFrame {
     };
 
     
-
+    /**
+     * Action performed when the restart button is clicked.
+     */
     private void restartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restartButtonActionPerformed
         permuteArray(labels);
         hole = nextHole;
