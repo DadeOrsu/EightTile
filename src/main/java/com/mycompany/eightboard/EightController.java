@@ -81,7 +81,6 @@ public class EightController extends JLabel implements VetoableChangeListener, A
      */
     @Override
     public void actionPerformed(ActionEvent ae) {
-        // retrieve the Array from the the restartButton's properties
         JButton button = (JButton) ae.getSource();
         if(button.getActionCommand().equals("restart")){
             int[] retrievedArray = (int[]) button.getClientProperty("labels");
